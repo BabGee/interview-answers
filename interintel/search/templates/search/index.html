@@ -1,0 +1,50 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link rel="stylesheet" href="{% static 'search/css/bootstrap.min.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="{% static 'search/css/main.css' %}" rel="stylesheet" />
+  </head>
+  
+  <body>
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+    <div class="s01">
+      
+      <form action="{% url 'search_results' %}" method="get">
+        <fieldset>
+          <legend>Discover Some Of Our Products</legend>
+        </fieldset>
+        <div class="inner-form">
+          
+            <div class="input-field first-wrap">
+              <input name="q" id="search" type="text" placeholder="What are you looking for?" />
+            </div>
+            <div class="input-field third-wrap">
+              <button class="btn-search" type="submit">Search</button>
+            </div>
+      
+        </div>
+      </form>
+    </div>
+    
+    <!-- Js Plugins -->
+    <script src="{% static 'search/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'search/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'search/js/jquery.magnific-popup.min.js' %}"></script>
+  </body>
+
+</html>
