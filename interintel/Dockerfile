@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
-# install uwgi dependencies
+# install uwsgi dependencies
 RUN apk add python3-dev build-base linux-headers pcre-dev
 
 # install dependencies

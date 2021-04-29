@@ -518,3 +518,25 @@ Install the `pycryptodome` package.
 ## Section B
 ### Q5. Search and results page using Django and postgreSQL database.
 
+Created a Django project (interintel) and app (search)
+
+Created the logic in search/views.py for handling the search_results
+
+Created a Dockerfile inside the project using base python image alpine version copied all the necessary folders and files and downloaded the dependencies and requirements.txt.
+
+Created a Nginx folder and created a Dockerfile specifically for nginx together with its configuration file
+
+Created the docker-compose.yml with services: web, db(postgres) and nginx
+
+Before running the container make sure you set your postgres configurations appropriately for the environment:
+```bash
+
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=search_db
+        
+```
+I used django-seed to generate dummy data to populate the database
+
+To search for a product click on the all products link on the homepage to view all products to get to know what to search for 
