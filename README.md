@@ -517,3 +517,4 @@ Install the `pycryptodome` package.
 
 ## Section B
 ### Q5. Search and results page using Django and postgreSQL database.
+

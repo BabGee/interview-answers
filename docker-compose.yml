@@ -5,6 +5,7 @@ services:
         build: ./interintel
         volumes:
             - ./interintel/:/usr/src/app/
+            - static:/static
         ports:
             - "8000:8000"
         depends_on: 
@@ -14,14 +15,17 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data/
         environment:
-            - POSTGRES_USER=intel
+            - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=password
             - POSTGRES_DB=search_db
     nginx:
         build: ./nginx
         ports:
             - "1337:80"
+        volumes:
+            - static:/static    
         depends_on:
             - web            
 volumes: 
-    postgres_data:            
+    postgres_data:
+    static:            
