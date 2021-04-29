@@ -3,11 +3,10 @@ version: '3.7'
 services:
     web:
         build: ./interintel
-        command: python manage.py runserver 0.0.0.0:8000
         volumes:
-        - ./interintel/:/usr/src/app/
+            - ./interintel/:/usr/src/app/
         ports:
-        - 8000:8000
+            - "8000:8000"
         depends_on: 
             - db
     db:
@@ -18,6 +17,11 @@ services:
             - POSTGRES_USER=intel
             - POSTGRES_PASSWORD=password
             - POSTGRES_DB=search_db
-            
+    nginx:
+        build: ./nginx
+        ports:
+            - "1337:80"
+        depends_on:
+            - web            
 volumes: 
     postgres_data:            
