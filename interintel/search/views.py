@@ -9,6 +9,11 @@ from .models import Product
 def index(request):
     return render(request, 'search/index.html')
 
+def display_products(request):
+    context = {
+        'all_products': Product.objects.all()
+    }
+    return render(request, 'search/allproducts.html', context)
 
 class SearchResultsView(View):
     def get(self, *args, **kwargs):

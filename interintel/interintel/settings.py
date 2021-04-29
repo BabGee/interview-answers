@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'search.apps.SearchConfig',
     # 3rd party package
     'django.contrib.humanize',
+    #Django seed to generate dummy data to db
+    'django_seed',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -82,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'search_db',
-        'USER': 'intel',
+        'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'db',
         'PORT': '5432',

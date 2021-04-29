@@ -22,8 +22,10 @@
       </div>
     {% endfor %}
   {% endif %}
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'products' %}">All products</a>
+      </div>
     <div class="s01">
-      
       <form action="{% url 'search_results' %}" method="get">
         <fieldset>
           <legend>Discover Some Of Our Products</legend>

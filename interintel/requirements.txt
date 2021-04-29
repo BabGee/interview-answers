@@ -1,4 +1,6 @@
 Django==3.2
+django-seed==0.2.2
 psycopg2-binary==2.8.6
+python-decouple==3.4
 gunicorn==20.1.0
 uWSGI==2.0.19.1
